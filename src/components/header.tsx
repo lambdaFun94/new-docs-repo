@@ -27,7 +27,7 @@ const Header = (props: Header) => {
         <nav className="py-6 flex items-center justify-between">
           <img src={logo} width="50" height="50"></img>
           <div className="text-2xl font-semibold">
-            Yext&apos;s Fashion Warehouse
+          Turtlehead Tacos
           </div>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">

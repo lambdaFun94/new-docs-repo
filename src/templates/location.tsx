@@ -69,7 +69,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({document}) => {
-  return `index/${document.id.toString()}`;
+  return `location/${document.id.toString()}`;
 };
 
 /**
@@ -113,7 +113,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
  * components any way you'd like as long as it lives in the src folder (though you should not put
  * them in the src/templates folder as this is specific for true template files).
  */
-const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
+const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
     name,
     address,
@@ -183,4 +183,4 @@ const Index: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, docum
   );
 };
 
-export default Index;
+export default Location;
