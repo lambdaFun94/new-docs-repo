@@ -159,7 +159,6 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
             </div>
           </div> 
         </div>
-        <Footer></Footer>
       </div>
     </PageLayout>
     </>

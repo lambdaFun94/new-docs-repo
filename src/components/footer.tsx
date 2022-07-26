@@ -6,6 +6,7 @@ type FooterProps = {
 }
 
 const Footer = ({_site}: FooterProps) => {
+
   return (
     <footer className="">
       <div className="flex flex-col flex-wrap justify-center p-5 md:flex-row">
