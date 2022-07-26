@@ -1,4 +1,5 @@
 import * as React from "react";
+import Site from "../types/Site";
 import Cta from "../components/cta";
 
 export type Link = {
@@ -6,15 +7,9 @@ export type Link = {
   url: string;
 };
 
-type Header = {
-  links: Link[];
-  logo: string;
+type Props = {
+  _site: Site;
 };
-
-type Site = {
-  name: string;
-  logo: any;
-}
 
 const links: Link[] = [
     {
@@ -27,7 +22,7 @@ const links: Link[] = [
     },
   ];
 
-const Header = ({_site}) => {
+const Header = ({_site }: Props) => {
 
   const linkDoms = links.map((link) => (
     <div key={link.label}>
@@ -42,7 +37,7 @@ const Header = ({_site}) => {
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <img src={_site.logo.image.url} width="50" height="50"></img>
+          <img src={_site.logo.image.url} width="75" height="75"></img>
           <div className="text-2xl font-semibold">{_site.name}</div>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">

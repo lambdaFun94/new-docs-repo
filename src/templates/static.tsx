@@ -62,30 +62,18 @@ export const getPath: GetPath<PokemonData> = () => {
 
 type PokemonRenderData = TemplateRenderProps & { pokemon: Pokemon };
 
-const links: Link[] = [
-  {
-    label: "Home",
-    url: "/turtlehead-tacos",
-  },
-  {
-    label: "About",
-    url: "/about.html",
-  },
-];
-
 /**
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `getStaticProps`.
  */
-const Static: Template<PokemonRenderData> = ({relativePrefixToRoot, path, document, pokemon}) => {
-  const { name } = pokemon;
+const Static: Template<PokemonRenderData> = ({relativePrefixToRoot, path, document}) => {
   const { _site } = document;
- console.log(_site)
+
   return (
     <>
       <PageLayout _site={_site}>
         <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
-          <h1>Welcome to Turtlehead Tacos</h1>
+          <h1>Welcome to {_site.name}</h1>
         </div>
         <div className="space-y-5">
           <p>
