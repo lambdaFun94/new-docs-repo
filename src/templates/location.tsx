@@ -28,6 +28,7 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
+import PageLayout from "../components/page-layout";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -115,6 +116,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
  */
 const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
   const {
+    _site,
     name,
     address,
     openTime,
@@ -127,26 +129,17 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
   const links: Link[] = [
     {
       label: "Home",
-      url: "/",
+      url: "/turtlehead-tacos",
     },
     {
       label: "About",
       url: "/about.html",
     },
-    {
-      label: "CatJam GIF",
-      url: "https://media.giphy.com/media/jpbnoe3UIa8TU8LM13/giphy.gif",
-    },
   ];
 
   return (
     <>
-      <div className="centered-container">
-        <Header
-          logo="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
-          links={links}
-        ></Header>
-      </div>
+    <PageLayout _site={_site}>
       <Banner name={name} address={address} openTime={openTime}>
         <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
           <div className="text-black text-base">Visit Us Today!</div>
@@ -179,6 +172,7 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
         </div>
         <Footer></Footer>
       </div>
+    </PageLayout>
     </>
   );
 };

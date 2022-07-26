@@ -11,8 +11,24 @@ type Header = {
   logo: string;
 };
 
-const Header = (props: Header) => {
-  const { links, logo } = props;
+type Site = {
+  name: string;
+  logo: any;
+}
+
+const links: Link[] = [
+    {
+      label: "Home",
+      url: "/turtlehead-tacos",
+    },
+    {
+      label: "About",
+      url: "/about.html",
+    },
+  ];
+
+const Header = ({_site}) => {
+
   const linkDoms = links.map((link) => (
     <div key={link.label}>
       <a href={link.url} target="_blank" rel="noreferrer">
@@ -21,14 +37,13 @@ const Header = (props: Header) => {
     </div>
   ));
 
+
   return (
     <>
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
-          <img src={logo} width="50" height="50"></img>
-          <div className="text-2xl font-semibold">
-          Turtlehead Tacos
-          </div>
+          <img src={_site.logo.image.url} width="50" height="50"></img>
+          <div className="text-2xl font-semibold">{_site.name}</div>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">
             <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
