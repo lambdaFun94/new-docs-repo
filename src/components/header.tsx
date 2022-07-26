@@ -2,27 +2,27 @@ import * as React from "react";
 import Site from "../types/Site";
 import Cta from "../components/cta";
 
-export type Link = {
+type Link = {
   label: string;
   url: string;
 };
 
-type Props = {
+type HeaderProps = {
   _site: Site;
 };
 
 const links: Link[] = [
     {
       label: "Home",
-      url: "/turtlehead-tacos",
+      url: "/",
     },
     {
       label: "About",
-      url: "/about.html",
+      url: "/about",
     },
   ];
 
-const Header = ({_site }: Props) => {
+const Header = ({_site }: HeaderProps) => {
 
   const linkDoms = links.map((link) => (
     <div key={link.label}>

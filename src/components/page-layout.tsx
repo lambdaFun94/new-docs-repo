@@ -1,10 +1,10 @@
 import * as React from "react";
+import Site from "../types/Site"
 import Header from "./header";
 import Footer from "./footer";
 
 type Props = {
-    title?: string;
-    _site?: any;
+    _site: Site;
     children?: React.ReactNode;
 };
   
@@ -12,10 +12,8 @@ type Props = {
     _site,
     children,
   }: Props) => {
-    console.log('site from page layout: ', _site)
     return (
         <div className="min-h-screen">
-        <p>{_site.name}</p>
             <Header _site={_site} />
                 {children}
             <Footer _site={_site}></Footer>

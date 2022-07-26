@@ -1,6 +1,8 @@
 type Site = {
   name: string,
   logo: Logo,
+  instagramHandle: string,
+  twitterHandle: string,
 };
 
 type Logo = {

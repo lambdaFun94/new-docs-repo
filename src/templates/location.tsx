@@ -126,17 +126,6 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
     services,
   } = document;
 
-  const links: Link[] = [
-    {
-      label: "Home",
-      url: "/turtlehead-tacos",
-    },
-    {
-      label: "About",
-      url: "/about.html",
-    },
-  ];
-
   return (
     <>
     <PageLayout _site={_site}>
@@ -168,7 +157,7 @@ const Location: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, do
                 ></StaticMap>
               )}
             </div>
-          </div>
+          </div> 
         </div>
         <Footer></Footer>
       </div>
